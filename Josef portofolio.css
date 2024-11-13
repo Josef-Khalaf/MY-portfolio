@@ -1,0 +1,349 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --mainColor: #0288d1;
+  --secound-color: #b3e5fc;
+  --darkcolor: #757575;
+  --darkPrimary: #0288d1;
+  --black: #212121;
+}
+body {
+  height: 400vh;
+  background-color: #607d8b;
+  font-family: "Roboto", serif;
+  caret-color: black;
+}
+
+@media (max-width: 768px) {
+  .parent1 {
+    flex-direction: column;
+  }
+  .myph {
+    width: 200px;
+  }
+  .image2 {
+    flex-direction: column;
+  }
+  .prog {
+    margin-top: 3vh !important;
+  }
+  .cube-text {
+    margin-top: 20px !important;
+  }
+  .info {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card {
+    width: 60% !important;
+    height: 8% !important;
+    margin: auto !important;
+    margin-top: 4% !important;
+  }
+}
+
+.parent1 {
+  height: 70vh;
+}
+.load ul {
+  width: 7rem;
+  padding-left: 0;
+}
+.load ul li {
+  width: 15px;
+  height: 15px;
+  margin-top: 3vh;
+  border-radius: 50%;
+  list-style: none;
+  background-color: rgb(38, 41, 44);
+  animation: loading;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 0.8s;
+}
+.load ul li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.load ul li:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.navbar {
+  background-color: #95cee8;
+}
+.nav-link {
+  width: fit-content;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 2px black;
+  font-size: 1.2em;
+  transition: 0.1s linear;
+  &:hover {
+    color: rgb(167, 196, 195);
+    background-color: rgb(33, 45, 45);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgb(119, 232, 232);
+  }
+}
+.search svg {
+  color: white;
+  cursor: pointer;
+}
+.navbar-toggler:focus {
+  border: 2px solid white;
+  box-shadow: 2px 1.5px 3px 2px #eee;
+}
+.skill {
+  height: 30%;
+}
+.skill h2 {
+  color: black;
+}
+.title2,
+.title3,
+.title4,
+.title5 {
+  color: #0be2ff !important;
+  text-shadow: 2px 2px 3px black;
+  text-transform: uppercase;
+}
+
+.prog {
+  width: 60vw;
+  height: 45vh;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.progress-bar {
+  background-color: none !important;
+  background-image: linear-gradient(to right, royalblue, rgb(84, 157, 182));
+  animation: ch 2s 0.3s infinite ease-in-out;
+  animation-direction: alternate;
+  position: relative;
+  &:after {
+    content: attr(p);
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    right: 0;
+    border-radius: 40px;
+  }
+}
+@keyframes ch {
+  from {
+    background-image: linear-gradient(
+      to right,
+      rgb(40, 60, 119),
+      rgb(62, 101, 114)
+    );
+  }
+  to {
+    background-image: linear-gradient(
+      to left,
+      rgb(42, 60, 117),
+      rgb(43, 97, 114)
+    );
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg) rotatex(360deg) rotatey(360deg);
+  }
+}
+@keyframes loading {
+  to {
+    opacity: 0.6;
+    transform: translatey(-15px);
+  }
+}
+.prog > div {
+  padding-top: 4px;
+  margin-top: 2px;
+}
+.skill-text {
+  color: rgb(0, 255, 234);
+  font-size: 20px;
+  padding: 1px;
+  text-shadow: 1.25px 1.4px 2px #eee;
+}
+.skill {
+  height: 30% !important;
+}
+.gallery {
+  height: 10%;
+}
+.cube {
+  height: 20%;
+  margin-top: 4vh;
+}
+.cube-text {
+  color: aqua;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  font-size: 35px;
+  margin-top: 450px !important;
+}
+
+.father {
+  margin: calc((100vh - 200px) / 2) auto;
+  height: 200px;
+  width: 200px;
+  perspective: 700px;
+}
+.chest {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+.chest:hover {
+  animation: none;
+}
+.top,
+.bottom,
+.left,
+.right,
+.front,
+.back {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  text-align: center;
+  font-size: 2em;
+  opacity: 0.7;
+  border: solid 4px black;
+  color: white;
+  p {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    text-transform: capitalize;
+  }
+}
+
+.front {
+  transform: rotatey(0deg) translatez(100px);
+  background-color: rgb(209, 116, 116);
+}
+.back {
+  transform: rotatey(180deg) translateZ(100px);
+  background-color: rgb(132, 203, 132);
+}
+.top {
+  transform: rotatex(90deg) translateZ(100px);
+  background-color: rgb(131, 212, 212);
+}
+.bottom {
+  transform: rotatex(-90deg) translateZ(100px);
+  background-color: rgb(100, 100, 185);
+}
+.left {
+  transform: rotatey(-90deg) translateZ(100px);
+  background-color: rgb(171, 78, 171);
+}
+.right {
+  transform: rotatey(90deg) translateZ(100px);
+  background-color: rgb(204, 173, 32);
+}
+.html-t,
+.css-t,
+.js-t,
+.r-t,
+.b-t {
+  color: aqua;
+  text-shadow: 1px 1px 2px #000000;
+  font-size: 18px;
+}
+
+.info {
+  height: 32%;
+}
+.title4 {
+  margin-top: 40px !important;
+}
+.card {
+  height: 27rem !important;
+  background-image: linear-gradient(
+    to left,
+    rgb(130, 196, 196),
+    rgb(93, 119, 198)
+  );
+}
+.card-title {
+  color: black;
+  text-shadow: 2px 2px 2px white;
+}
+.card p {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+.contact {
+  height: 20%;
+}
+.title5 {
+  margin: 3rem auto;
+  padding: 4px;
+  width: fit-content;
+  background-image: linear-gradient(to left, #eee, rgb(122, 147, 221), #eee);
+  border-radius: 10px;
+}
+
+.fo {
+  background-image: url(/React/Kasper/images/landing.jpg);
+  object-fit: cover;
+}
+form {
+  margin-top: 20%;
+}
+.n,
+.p,
+.e {
+  width: 50% !important;
+  height: 30% !important;
+  label {
+    width: 100%;
+    font-size: 1.2em;
+    margin-bottom: 3.24px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+  }
+  input {
+    width: 100%;
+    height: 20% !important;
+    line-height: 0 !important;
+    background-color: #b3e5fc;
+    color: black;
+    text-shadow: 1px 1px 1px gray;
+    border-radius: 20px;
+    outline: none !important;
+  }
+}
+::placeholder {
+  background-color: royalblue;
+  box-shadow: 2px 2px 2px 2px whitesmoke;
+  outline: 0;
+  line-height: none !important;
+  border: none !important;
+  color: white;
+  font-size: 18px;
+  text-shadow: 0px 1px 1px aqua;
+  text-align: center;
+}
+button {
+  margin-top: 7px;
+  width: 7%;
+  font-size: 1.25rem !important;
+  text-align: center;
+  color: aqua;
+  background-color: #333;
+  border: 1px white solid;
+  border-radius: 5px;
+  &:hover {
+    box-shadow: -1px -2px 2px 1px whitesmoke;
+  }
+}
